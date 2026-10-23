@@ -1,0 +1,11 @@
+node_modules/
+secret/
+*.key
+seed.txt
+.env
+.env.*
+*.log
+*.out
+base.url
+web-sessions.json
+*.pool.json

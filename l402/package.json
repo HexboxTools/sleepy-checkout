@@ -1,0 +1,1 @@
+{"name":"hexbox-l402","version":"0.1.0","type":"module","private":true,"dependencies":{"hostc":"^2.0.6","liveapps":"^0.2.2","macaroon":"^3.0.4","uqr":"^0.1.3","ws":"^8.22.0"}}
