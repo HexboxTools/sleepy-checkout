@@ -3,7 +3,7 @@ import fs from "node:fs"; import os from "node:os"; import path from "node:path"
 import { execFileSync } from "node:child_process"; import { createRequire } from "node:module"; import crypto from "node:crypto";
 const require = createRequire(import.meta.url);
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "hxp-"));
-const SRC = "./plugins/shop/products/RenderLadder-1.0.0.zip";
+const SRC = path.join(tmp, "sample.bin"); fs.writeFileSync(SRC, crypto.randomBytes(4096));
 fs.writeFileSync(path.join(tmp, "catalog.json"), JSON.stringify({ "render-ladder": { title: "Render Ladder 1.0.0 (Blender add-on)", file: SRC, sats: 2100, license: "GPL-3.0-or-later" } }));
 process.env.HXP_ROOT = tmp; process.env.HXP_CATALOG = path.join(tmp, "catalog.json");
 const L = await import("../lib.mjs"), POOL = await import("../pool.mjs"), HXP = require("../unlock-core.js");
